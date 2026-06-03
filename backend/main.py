@@ -17,8 +17,7 @@ app.add_middleware(
 )
 
 # This is where your Groq key is used
-GROQ_API_KEY = "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"
-groq_client = Groq(api_key=GROQ_API_KEY)
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "your-groq-api-key-here")groq_client = Groq(api_key=GROQ_API_KEY)
 
 def init_db():
     conn = sqlite3.connect("leads.db")
